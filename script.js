@@ -24,8 +24,6 @@ window.addEventListener("load", function () {
   const showGameSpeed = document.getElementById("showGameSpeed");
   showGameSpeed.innerHTML = gameSpeed;
   slider.addEventListener("change", function (e) {
-    console.log(e.target);
-    console.log(e.target.value);
     gameSpeed = e.target.value;
     showGameSpeed.innerHTML = gameSpeed;
   });
