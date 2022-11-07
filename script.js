@@ -17,6 +17,10 @@ backgroundLayer4.src = "./layers/layer-4.png";
 const backgroundLayer5 = new Image();
 backgroundLayer5.src = "./layers/layer-5.png";
 
+const sound = new Audio();
+sound.src = "jam_music.wav";
+sound.play();
+
 // all code should run when page is propperly loaded and available:
 window.addEventListener("load", function () {
   const slider = document.getElementById("slider");
@@ -24,6 +28,7 @@ window.addEventListener("load", function () {
   const showGameSpeed = document.getElementById("showGameSpeed");
   showGameSpeed.innerHTML = gameSpeed;
   slider.addEventListener("change", function (e) {
+    sound.play();
     gameSpeed = e.target.value;
     showGameSpeed.innerHTML = gameSpeed;
   });
