@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 // setting correct scaling (by default it's 300x150px):
 const CANVAS_WIDTH = (canvas.width = 800);
 const CANVAS_HEIGHT = (canvas.height = 700);
-let gameSpeed = 10;
+let gameSpeed = 4;
 // let gameFrame = 0; // another metod, but with "ragged" bug when changing speed by range
 
 const backgroundLayer1 = new Image();
@@ -19,7 +19,6 @@ backgroundLayer5.src = "./layers/layer-5.png";
 
 const sound = new Audio();
 sound.src = "jam_music.wav";
-sound.play();
 
 // all code should run when page is propperly loaded and available:
 window.addEventListener("load", function () {
@@ -28,12 +27,13 @@ window.addEventListener("load", function () {
   const showGameSpeed = document.getElementById("showGameSpeed");
   showGameSpeed.innerHTML = gameSpeed;
   slider.addEventListener("change", function (e) {
-    sound.play();
     gameSpeed = e.target.value;
     showGameSpeed.innerHTML = gameSpeed;
   });
 
   let x = 0;
+  sound.play();
+
   // let x2 = 2400;
 
   class Layer {
